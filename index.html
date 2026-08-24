@@ -1,16 +1,25 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Techno</title>
-  <script src="vue.min.js"></script>
-  <link rel="stylesheet" href="./style.css">
-</head>
-<body>
-  <div id="app">
-    <p>{{produtos}}</p>
-  </div>
-  <script src="./app.js"></script>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techno</title>
+    <script src="vue.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wdth,wght@0,62.5..100,100..900;1,62.5..100,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div id="app">
+      <section class="produtos">
+        <div v-for="produto in produtos" :key="produto.id" class="produto">
+          <img :src="produto.img" :alt="produto.nome" class="produto_img" />
+          <div class="produto_info">
+            <span class="produto_preco">{{produto.preco}}</span>
+            <h2 class="produto_titulo">{{produto.nome}}</h2>
+          </div>
+        </div>
+      </section>
+    </div>
+    <script src="./app.js"></script>
+  </body>
 </html>
